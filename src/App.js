@@ -1,46 +1,32 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import './App.css';
-import Home from './components/home'
+import Home from './components/home/index'
 import AddTask from './components/add-task'
-const TASK_DUMMY_DATA = [
-    {
-        title: 'Task1',
-        id: 0
-    },
-    {
-        title: 'Task2',
-        id: 1
-    },
-    {
-        title: 'Task3',
-        id: 2
-    }
-];
 
-let nextId = 3;
+import store from './redux'
+
+import {Provider} from 'react-redux';
+
 class App extends Component {
-    constructor(p) {
-        super(p);
-        this.state = {
-            tasks: TASK_DUMMY_DATA
-        };
-        this.onTaskInsert = this.onTaskInsert.bind(this);
-    }
-
-    onTaskInsert(title) {
-        this.setState({
-            tasks: [{title, id: nextId++}, ...this.state.tasks]
-        })
-    }
 
     render() {
         return (
             <div className="App">
-                <Home tasks={this.state.tasks}/>
-                <AddTask onTaskInsert={this.onTaskInsert}/>
+                <Home />
+                <AddTask />
             </div>
         );
     }
 }
 
-export default App;
+
+class ProviderApp extends PureComponent {
+    render() {
+        return (
+            <Provider store={store}>
+                <App />
+            </Provider>
+        )
+    }
+}
+export default ProviderApp;
