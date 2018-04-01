@@ -1,6 +1,6 @@
 import React, { PureComponent} from 'react';
 import { Link } from 'react-router'
-import './NavBar.css';
+import './NavBar.scss';
 
 export default class NavBar extends PureComponent {
     render() {

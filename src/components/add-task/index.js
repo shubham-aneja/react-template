@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './AddTask.css';
+import './AddTask.scss';
 import PropTypes from 'prop-types'
 
 export default class AddTask extends Component {

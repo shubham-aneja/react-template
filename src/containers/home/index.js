@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import {connect} from 'react-redux'
 import {loginDoLogout} from '../../redux/actions/'
-import './Home.css';
+import './Home.scss';
 import {TaskList} from '../'
 import {AddTask} from '../../containers'
 import {NavBar} from '../../components'
