@@ -1,6 +1,6 @@
 import React, {  PureComponent } from 'react';
 import './App.css';
-import Home from './components/home/index'
+import {Home} from './containers'
 import {Provider} from 'react-redux';
 import { Switch, Route, Redirect} from 'react-router'
 import { ConnectedRouter } from 'react-router-redux'

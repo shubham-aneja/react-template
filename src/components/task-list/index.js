@@ -1,9 +1,24 @@
 import React, { Component} from 'react';
 import PropTypes from 'prop-types'
 import './TaskList.css';
-import {connect} from 'react-redux';
 
-class TaskList extends Component {
+export default class TaskList extends Component {
+
+    static propTypes = {
+        tasks: PropTypes.arrayOf(
+            PropTypes.shape(
+                {
+                    title: PropTypes.string.isRequired,
+                    id: PropTypes.number.isRequired
+                }
+            ).isRequired
+        ).isRequired
+    };
+
+    static defaultProps = {
+        tasks: []
+    };
+
     render() {
 
         const { tasks } = this.props;
@@ -19,25 +34,5 @@ class TaskList extends Component {
     }
 }
 
-TaskList.defaultProps = {
-    tasks: []
-}
-TaskList.propTypes = {
-    tasks: PropTypes.arrayOf(
-        PropTypes.shape(
-            {
-                title: PropTypes.string,
-                id: PropTypes.number.isRequired
-            }
-        ).isRequired
-    ).isRequired
-}
 
-const mapStateToProps = (state, ownProps)=> {
-    const tasksState = state.tasks
-    return {
-        tasks: tasksState
-    }
-}
-TaskList = connect(mapStateToProps)(TaskList)
-export default TaskList;
+

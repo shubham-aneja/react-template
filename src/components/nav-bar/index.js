@@ -7,7 +7,6 @@ export default class NavBar extends PureComponent {
 
         return (
             <div className="Home-app">
-
                 <div>
                     <NavLink activeClassName="selectedNavLink" to="/app/home">App/Home</NavLink>
                 </div>

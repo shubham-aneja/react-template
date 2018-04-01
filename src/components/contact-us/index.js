@@ -5,9 +5,7 @@ const ContactUs = (props)=> {
         <div className="Home-app">
             <h2>Contact us at *********</h2>
 
-            <div onClick={()=>{
-            props.history.goBack();
-            }}>
+            <div onClick={props.history.goBack}>
                 Go back
             </div>
         </div>
