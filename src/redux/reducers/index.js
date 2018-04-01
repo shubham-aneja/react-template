@@ -4,7 +4,7 @@ import { routerReducer } from 'react-router-redux'
 
 const rootReducer =  combineReducers({
     tasks: taskReducer,
-    router: routerReducer
+    routing: routerReducer
 });
 
 export default rootReducer

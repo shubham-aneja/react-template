@@ -1,5 +1,5 @@
 import React, { PureComponent} from 'react';
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router'
 import './NavBar.css';
 
 export default class NavBar extends PureComponent {
@@ -8,14 +8,17 @@ export default class NavBar extends PureComponent {
         return (
             <div className="Home-app">
                 <div>
-                    <NavLink activeClassName="selectedNavLink" to="/app/home">App/Home</NavLink>
+                    <Link activeClassName="selectedNavLink" to="/app">App/Home</Link>
                 </div>
 
                 <div>
-                    <NavLink activeClassName="selectedNavLink" to="contactus">Contact us</NavLink>
+                    <Link activeClassName="selectedNavLink" to="/contactus">Contact us</Link>
                 </div>
                 <div>
-                    <NavLink activeClassName="selectedNavLink" to="/login">Logout</NavLink>
+                    <Link onClick={()=> {
+                localStorage.removeItem('userInfo')
+            }}
+                          activeClassName="selectedNavLink" to="/login">Logout</Link>
                 </div>
 
             </div>

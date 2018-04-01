@@ -4,7 +4,9 @@ import Footer from './footer'
 import Header from './header'
 import TaskList from './task-list'
 import ContactUs from './contact-us';
-import AddTask from './add-task'
+import AddTask from './add-task';
+import Login from './login';
+import NotFound from './not-found';
 
 export {
     AddTask,
@@ -13,5 +15,7 @@ export {
     //Home,
     Header,
     TaskList,
-    ContactUs
+    ContactUs,
+    Login,
+    NotFound
 }
