@@ -1,5 +1,5 @@
-import {Login, NotFound, ContactUs} from '../components'
-import { Home} from '../containers'
+import { NotFound, ContactUs} from '../components'
+import {Login, Home} from '../containers'
 
 
 /* use childROutes: https://scotch.io/courses/using-react-router-4/child-routes

@@ -14,13 +14,6 @@ export default class NavBar extends PureComponent {
                 <div>
                     <Link activeClassName="selectedNavLink" to="/contactus">Contact us</Link>
                 </div>
-                <div>
-                    <Link onClick={()=> {
-                localStorage.removeItem('userInfo')
-            }}
-                          activeClassName="selectedNavLink" to="/login">Logout</Link>
-                </div>
-
             </div>
         );
     }

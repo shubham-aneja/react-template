@@ -1,4 +1,4 @@
-import Actions from '../redux/actions/index'
+//import {taskAddTask} from '../redux/actions/index'
 import {connect} from 'react-redux';
 
 import {AddTask} from '../components/'
@@ -7,7 +7,7 @@ const mapStateToProps = ()=>({});
 const mapDispatchToProps = (dispatch)=> {
     return {
         onTaskInsert: (title)=> {
-            dispatch(Actions.taskAddTask({title}))
+            //dispatch(taskAddTask({title}))
         }
     }
 };

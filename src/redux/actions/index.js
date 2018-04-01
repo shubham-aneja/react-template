@@ -1,6 +1,2 @@
-import * as taskActions from './tasks.js'
-
-export default  {
-    ...taskActions
-}
-
+export  *  from './tasks'
+export  *  from './login'
