@@ -1,3 +1,20 @@
-/* .Home-app{
-    color: orange;
-} */
+@import "../../configurations/theme";
+
+.add-task{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input{
+        padding: 20px;
+        font-size: 1.1em;
+    }
+    .add-task-action{
+        color: $primary-font-color;
+        padding: 20px;
+        background-color: $secondary-bg-color;
+        margin-top: 10px;
+        cursor: pointer;
+
+    }
+}

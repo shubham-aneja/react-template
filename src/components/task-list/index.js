@@ -23,7 +23,7 @@ export default class TaskList extends Component {
 
         const { tasks } = this.props;
         return (
-            <div className="TaskList-app">
+            <div className="taskList-app">
                 <ol>
                     {tasks && tasks.map(task => {
                         return (<li key={task.id}>{task.title}</li>)
