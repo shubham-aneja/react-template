@@ -1,4 +1,4 @@
-import { NotFound, ContactUs, Terms} from '../components'
+import { NotFound, ContactUs} from '../components'
 import {Login, Home} from '../containers'
 
 

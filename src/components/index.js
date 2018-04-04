@@ -8,6 +8,7 @@ import AddTask from './add-task';
 import Login from './login';
 import NotFound from './not-found';
 import Terms from './terms';
+import PlanetList from './planetsList'
 
 export {
     AddTask,
@@ -19,5 +20,6 @@ export {
     ContactUs,
     Login,
     NotFound,
-    Terms
+    Terms,
+    PlanetList
 };
