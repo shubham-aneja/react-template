@@ -1,12 +1,28 @@
 import {connect} from 'react-redux'
 import {PlanetDetail} from '../components/'
-//import {loginUserNameChange, loginPasswordChange, loginDoLogin, loginDestroy} from '../redux/actions/'
+import {
+    planetDetailGetInfo,
+    planetDetailSetError,
+    planetDetailSetLoading,
+    planetDetailSetDetails,
+    planetDetailDestroy
+
+} from '../redux/actions/'
 
 const mapStateToProps = state => {
-    return {value: 10}
+    const planetDetailState = state.planetDetail || {};
+    const {loading, error, planetInfo} = planetDetailState;
+    return {
+        loading,
+        error,
+        planetInfo
+    }
 };
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+    planetDetailGetInfo,
+    planetDetailDestroy
+};
 
 
 const ConnectedPlanetDetail = connect(mapStateToProps, mapDispatchToProps)(PlanetDetail);
