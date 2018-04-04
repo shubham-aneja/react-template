@@ -1,0 +1,12 @@
+@import "../../configurations/theme";
+
+.planetList__planet-item {
+  margin: 20px 0;
+  border: 1px solid;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.planetList__error-container{
+  color: red;
+}

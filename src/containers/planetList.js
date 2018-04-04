@@ -1,13 +1,24 @@
 import {connect} from 'react-redux'
 import {PlanetList} from '../components/'
-//import {loginUserNameChange, loginPasswordChange, loginDoLogin, loginDestroy} from '../redux/actions/'
+import {planetListSetError, planetListSetLoading, planetListDestroy , planetListSetPlanets, planetListFetchPlanets} from '../redux/actions'
 
-const mapStateToProps = state => {
-    return {value: 10}
+const mapStateToProps = (state, ownProps)=> {
+    const planetListState = state.planetList || {};
+    const {loading, error, planets} = planetListState;
+    return {
+        loading,
+        error,
+        planets
+    }
 };
 
-const mapDispatchToProps = {};
-
+const mapDispatchToProps = {
+    planetListSetError,
+    planetListSetLoading,
+    planetListDestroy,
+    planetListSetPlanets,
+    planetListGetPlanets: planetListFetchPlanets
+};
 
 const ConnectedPlanetList = connect(mapStateToProps, mapDispatchToProps)(PlanetList);
 

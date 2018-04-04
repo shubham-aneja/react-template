@@ -8,7 +8,7 @@ import AddTask from './add-task';
 import Login from './login';
 import NotFound from './not-found';
 import Terms from './terms';
-import PlanetList from './planetsList'
+import PlanetList from './planetList'
 import PlanetDetail from './planetDetail'
 
 export {
