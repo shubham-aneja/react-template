@@ -4,6 +4,7 @@ import Login from './login.js'
 import AddTask from './add-task.js'
 import Header from './header.js'
 import PlanetList from './planetList.js'
+import PlanetDetail from './planetDetail.js'
 
 export {
     Header,
@@ -11,5 +12,6 @@ export {
     Home,
     AddTask,
     Login,
-    PlanetList
+    PlanetList,
+    PlanetDetail
 }

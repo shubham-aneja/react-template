@@ -7,5 +7,6 @@ export default class PlanetsList extends PureComponent {
             Value is: {this.props.value}
             Planets list
         </div>)
+
     }
 }

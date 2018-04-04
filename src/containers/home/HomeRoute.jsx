@@ -2,7 +2,7 @@ import React, { PureComponent} from 'react';
 import './Home.scss';
 import { Router, Route} from 'react-router'
 import {TaskList} from '../'
-import {AddTask, PlanetList} from '../../containers'
+import {AddTask, PlanetList, PlanetDetail} from '../../containers'
 import {Terms, ContactUs} from '../../components'
 
 
@@ -29,6 +29,7 @@ export default class HomeRoute extends PureComponent {
                 <Route path="/" component={WelcomeComp}></Route>
                 <Route path="/tasks" component={TaskDashboard}></Route>
                 <Route path="/planets" component={PlanetList}></Route>
+                <Route path="/planet/:id" component={PlanetDetail}></Route>
             </Router>
         </div>)
     }

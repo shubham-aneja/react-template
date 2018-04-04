@@ -14,6 +14,7 @@ export default [
         {path: 'contact-us'},
         {path: 'tasks'},
         {path: 'planets'},
+        {path: 'planet/:id'},
         {path: 'terms'}
     ]
     },
