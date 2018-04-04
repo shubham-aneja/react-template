@@ -6,13 +6,16 @@ export default class NavBar extends PureComponent {
     render() {
 
         return (
-            <div className="Home-app">
-                <div>
-                    <Link activeClassName="selectedNavLink" to="/app">App/Home</Link>
+            <div className="navigations">
+                <div  className="navigations__item">
+                    <Link activeClassName="selectedNavLink"  className="navLink" to="/">Home</Link>
                 </div>
 
-                <div>
-                    <Link activeClassName="selectedNavLink" to="/contactus">Contact us</Link>
+                <div  className="navigations__item">
+                    <Link activeClassName="selectedNavLink" className="navLink"  to="/contactus">Contact us</Link>
+                </div>
+                <div  className="navigations__item">
+                    <Link activeClassName="selectedNavLink" className="navLink"  to="/dummy">Dummy link</Link>
                 </div>
             </div>
         );

@@ -1,3 +1,23 @@
-.selectedNavLink{
-    color: red
+@import "../../configurations/theme";
+
+
+.navigations {
+  display: flex;
+  justify-content: center;
+  font-size: 150%;
+  background-color: $secondary-bg-color;
+}
+
+.navigations__item {
+  padding: 20px;
+  .navLink {
+    color: white;
+    cursor: pointer;
+  }
+}
+
+
+.selectedNavLink {
+    font-weight: bold;
+    text-decoration-color: orange;
 }

@@ -16,7 +16,7 @@ const Header = (props)=> {
             </div>
 
             <div className="header__title-container">
-                Header component
+                Welcome to Pizza Bar
             </div>
 
 

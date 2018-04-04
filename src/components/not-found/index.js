@@ -6,8 +6,9 @@ const NotFound = ()=> {
     return (
         <div className="Home-app">
 
-            <h2>Page Not Found</h2>
             <NavBar></NavBar>
+
+            <h2>Page Not Found</h2>
         </div>
     );
 };

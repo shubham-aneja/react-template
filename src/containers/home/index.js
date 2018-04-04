@@ -12,9 +12,13 @@ class Home extends Component {
         const {loginDoLogout} = this.props;
         return (
             <div className="Home-app">
+
                 <Header></Header>
-                <TaskList></TaskList>
+
                 <NavBar></NavBar>
+
+                <TaskList></TaskList>
+
                 <AddTask></AddTask>
                 <Footer></Footer>
 
