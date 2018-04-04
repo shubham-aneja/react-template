@@ -7,6 +7,7 @@ import ContactUs from './contact-us';
 import AddTask from './add-task';
 import Login from './login';
 import NotFound from './not-found';
+import Terms from './terms';
 
 export {
     AddTask,
@@ -17,5 +18,6 @@ export {
     TaskList,
     ContactUs,
     Login,
-    NotFound
-}
+    NotFound,
+    Terms
+};

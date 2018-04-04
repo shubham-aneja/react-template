@@ -1,3 +1,21 @@
-/* .Home-app{
-    color: orange;
-} */
+.home {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.home__headers {
+
+}
+
+.home__body {
+  flex: 1;
+}
+
+.home__footer {
+
+}
+
+.home__welcome-header{
+  text-align: center;
+}

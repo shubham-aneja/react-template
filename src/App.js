@@ -39,14 +39,12 @@ const history = syncHistoryWithStore(browserHistory, store)
 
 class App extends PureComponent {
     render() {
+
         return (
             <Provider store={store}>
                 <div className="app__container">
-                    <div className="app__router-container">
-                        <Router routes={Routes} history={history}>
-                            <div>Inside ConnectedROuter</div>
-                        </Router>
-                    </div>
+                    <Router routes={Routes} history={history}>
+                    </Router>
                 </div>
             </Provider>
         )

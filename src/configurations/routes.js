@@ -1,4 +1,4 @@
-import { NotFound, ContactUs} from '../components'
+import { NotFound, ContactUs, Terms} from '../components'
 import {Login, Home} from '../containers'
 
 
@@ -11,7 +11,10 @@ import {Login, Home} from '../containers'
 export default [
     {
         path: '/', component: Home, onEnter, childRoutes: [
-        {path: 'contactus', component: ContactUs, onEnter}
+        {path: 'contact-us'},
+        {path: 'tasks'},
+        {path: 'planets'},
+        {path: 'terms'}
     ]
     },
     {path: 'contactus', component: ContactUs, onEnter},

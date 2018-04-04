@@ -1,4 +1,3 @@
-
 import React, {  PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import './login.scss'
@@ -89,7 +88,7 @@ class Login extends PureComponent {
                 <div className="info-section">
                     <div className='info-item'><span>Username and password are case sensitive</span></div>
 
-                    <div  className='info-item'>
+                    <div className='info-item'>
                         <span>For testing: use Luke Skywalker and 19BBY</span>
                     </div>
                     <div className='info-item'>
