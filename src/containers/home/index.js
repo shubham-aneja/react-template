@@ -3,19 +3,15 @@ import {connect} from 'react-redux'
 import {loginDoLogout} from '../../redux/actions/'
 import './Home.scss';
 import {TaskList} from '../'
-import {AddTask} from '../../containers'
-import {NavBar} from '../../components'
-import {Header} from '../../components'
-import {Footer} from '../../components'
+import {AddTask, Header} from '../../containers'
+import {NavBar, Footer} from '../../components'
 
 
 class Home extends Component {
     render() {
-        const {loginDoLogout} = this.props
+        const {loginDoLogout} = this.props;
         return (
             <div className="Home-app">
-                <h2>Home from Index</h2>
-
                 <Header></Header>
                 <TaskList></TaskList>
                 <NavBar></NavBar>

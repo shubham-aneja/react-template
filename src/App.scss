@@ -1,3 +1,15 @@
+/*
+
+scss features:
+
+  Variables
+  Nesting
+  Partials and Import
+  Mixins
+  Extend/Inheritance
+  Operators
+*/
+
 @import './configurations/theme';
 
 @mixin border-radius($radius) {
@@ -8,7 +20,7 @@
 }
 
 %common-app-styles {
-  background-color: $appBackgroundColor;
+  background-color: $tertiary-bg-color;
   margin: 5px + 5px + 5px+ 5px;
   border: 1px solid darkslateblue;
 
@@ -23,15 +35,15 @@
   bottom: 0;
   overflow-y: auto;
   @extend %common-app-styles;
-
-  .app__router-container {
-    display: flex;
-    justify-content: center;
-    border: 1px solid orangered;
-    margin: 2px;
-    padding: 20px;
-    @include border-radius(10px);
-    @extend %common-app-styles
-  }
+  //
+  //.app__router-container {
+  //  display: flex;
+  //  justify-content: center;
+  //  border: 1px solid orangered;
+  //  margin: 2px;
+  //  padding: 20px;
+  //  @include border-radius(10px);
+  //  @extend %common-app-styles
+  //}
 
 }

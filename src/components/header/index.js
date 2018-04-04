@@ -1,14 +1,35 @@
 import React from 'react';
-
-const Header = ()=> {
+import './header.scss'
+import PropTypes from 'prop-types'
+import {Link} from 'react-router'
+const Header = (props)=> {
 
     return (
-        <div className="Home-app">
+        <div className="header-container">
 
-            <h2>Header component</h2>
+            <div className="header__logo-container">
+                <Link to="/">
+
+                    <img src="/logo.png" alt="logo__img" className=""/>
+                </Link>
+
+            </div>
+
+            <div className="header__title-container">
+                Header component
+            </div>
+
+
+            <div className="header__actions-container">
+                <div onClick={props.onLogout} className="header__action-container__action">
+                    Logout
+                </div>
+            </div>
         </div>
     );
 };
-
+Header.propTypes = {
+    onLogout: PropTypes.func.isRequired
+};
 
 export default Header

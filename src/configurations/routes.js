@@ -10,7 +10,7 @@ import {Login, Home} from '../containers'
 
 export default [
     {
-        path: 'app', component: Home, onEnter, childRoutes: [
+        path: '/', component: Home, onEnter, childRoutes: [
         {path: 'contactus', component: ContactUs, onEnter}
     ]
     },
@@ -24,7 +24,7 @@ function onEnter(nextState, transition, callback) {
     const isLoggedIn = localStorage.getItem('userInfo');
     if (isLoggedIn) {
         if (pathname === '/login') {
-            transition('/app')
+            transition('/')
         }
     }
     else {

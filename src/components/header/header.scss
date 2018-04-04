@@ -1,0 +1,39 @@
+@import "../../configurations/theme";
+
+.header-container {
+  background-color: $primary-bg-color;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  color: $primary-font-color;
+}
+
+.header__logo-container {
+  flex: 1;
+
+  img {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.header__title-container {
+  flex: 1;
+  font-size: 2vw;
+  padding: 10px;
+
+}
+
+.header__actions-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 5px;
+}
+
+
+
+.header__action-container__action{
+  padding: 10px;
+  cursor: pointer;
+}

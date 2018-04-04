@@ -72,7 +72,7 @@ export const loginDoLogin = ({username, password})=> {
                     }
                     if (user) {
                         localStorage.setItem('userInfo', username);
-                        dispatch(push({pathname: '/app'}));
+                        dispatch(push({pathname: '/'}));
                         dispatch(loginPasswordChange(''));
                         dispatch(loginUserNameChange(''));
                         dispatch(loginSetError(''));
