@@ -7,8 +7,12 @@ export default class PlanetsList extends PureComponent {
         planets: [],
         error: '',
         loading: false,
-        planetListGetPlanets: ()=>{},
-        planetListDestroy: ()=>{},
+        planetListGetPlanets: ()=> {
+        },
+        planetListDestroy: ()=> {
+        },
+        planetListSelectItem: ()=> {
+        },
     };
 
     static propTypes = {
@@ -22,6 +26,7 @@ export default class PlanetsList extends PureComponent {
         loading: PropTypes.bool.isRequired,
         planetListGetPlanets: PropTypes.func.isRequired,
         planetListDestroy: PropTypes.func.isRequired,
+        planetListSelectItem: PropTypes.func.isRequired,
     };
 
     componentDidMount() {
@@ -29,9 +34,13 @@ export default class PlanetsList extends PureComponent {
         planetListGetPlanets();
     }
 
-    renderPlanet(planet) {
+    selectItem = (planet)=> {
+        this.props.planetListSelectItem(planet);
+    };
+
+    renderPlanet=(planet)=> {
         return (
-            <div key={planet.name} className='planetList__planet-item'>
+            <div key={planet.name} className='planetList__planet-item' onClick={()=>this.selectItem(planet)}>
                 <div>Name: {planet.name}</div>
                 <div>gravity: {planet.gravity}</div>
                 <div>surface_water: {planet.surface_water}</div>

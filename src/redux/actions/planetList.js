@@ -1,5 +1,6 @@
 import Types from './types.js'
 import {api} from '../../utils/api'
+import { push} from 'react-router-redux'
 
 const PLANET_GET_URL = `https://swapi.co/api/planets`;
 
@@ -30,6 +31,16 @@ export const planetListSetPlanets = (planets)=> (
     planets
 }
 );
+
+export const planetListSelectItem = (selectedPlanet)=> (dispatch)=> {
+    const idRegex = /[0-9]+/;
+    let id = selectedPlanet.url.match(idRegex);
+    if (!selectedPlanet || !selectedPlanet.url || id == undefined) {
+        dispatch(planetListSetError("No detail available for planet to get more info"))
+    } else {
+        dispatch(push({pathname: `planet/` + id}));
+    }
+};
 
 export const planetListFetchPlanets = ()=> {
 
