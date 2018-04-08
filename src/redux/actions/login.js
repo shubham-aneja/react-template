@@ -1,6 +1,6 @@
 import Types from './types.js'
 import {api} from '../../utils/api'
-import { push} from 'react-router-redux'
+import {pushPath} from './'
 
 const LOGIN_URL = `https://swapi.co/api/people/?search`;
 
@@ -41,7 +41,7 @@ export const loginDestroy = ()=>({
 export const loginDoLogout = (payload)=> {
     localStorage.removeItem('userInfo');
     return (dispatch)=> {
-        dispatch(push({pathname: '/login'}));
+        dispatch(pushPath('/login'));
     }
 }
 
@@ -72,7 +72,7 @@ export const loginDoLogin = ({username, password})=> {
                     }
                     if (user) {
                         localStorage.setItem('userInfo', username);
-                        dispatch(push({pathname: '/'}));
+                        dispatch(pushPath('/'));
                         dispatch(loginPasswordChange(''));
                         dispatch(loginUserNameChange(''));
                         dispatch(loginSetError(''));

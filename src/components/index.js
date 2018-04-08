@@ -1,5 +1,4 @@
 import NavBar from './nav-bar'
-//import Home from './home'
 import Footer from './footer'
 import Header from './header'
 import TaskList from './task-list'
@@ -9,13 +8,12 @@ import Login from './login';
 import NotFound from './not-found';
 import Terms from './terms';
 import PlanetList from './planetList'
-import PlanetDetail from './planetDetail'
+import PlanetDetail from './planetDetail/index'
 
 export {
     AddTask,
     NavBar,
     Footer,
-    //Home,
     Header,
     TaskList,
     ContactUs,

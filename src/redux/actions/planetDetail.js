@@ -1,6 +1,5 @@
 import Types from './types.js'
 import {api} from '../../utils/api'
-import { push} from 'react-router-redux'
 
 const PLANET_GET_URL = `https://swapi.co/api/planets/`;
 

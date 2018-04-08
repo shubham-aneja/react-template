@@ -2,9 +2,6 @@ import {connect} from 'react-redux'
 import {PlanetDetail} from '../components/'
 import {
     planetDetailGetInfo,
-    planetDetailSetError,
-    planetDetailSetLoading,
-    planetDetailSetDetails,
     planetDetailDestroy
 
 } from '../redux/actions/'

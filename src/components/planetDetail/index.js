@@ -1,3 +1,2 @@
-import PlanetDetail from './PlanetDetail.jsx'
+export {default} from './PlanetDetail.jsx'
 
-export default PlanetDetail
