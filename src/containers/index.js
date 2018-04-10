@@ -1,17 +1,7 @@
-import TaskList from './task-list'
-import Home from './home'
-import Login from './login.js'
-import AddTask from './add-task.js'
-import Header from './header.js'
-import PlanetList from './planetList.js'
-import PlanetDetail from './planetDetail.js'
-
-export {
-    Header,
-    TaskList,
-    Home,
-    AddTask,
-    Login,
-    PlanetList,
-    PlanetDetail
-}
+export {default as  TaskList }from './task-list'
+export {default as  Home } from './home'
+export {default as  Login }from './login.js'
+export {default as  AddTask }from './add-task.js'
+export {default as  Header  }from './header.js'
+export {default as  PlanetList } from './planetList.js'
+export {default as  PlanetDetail  }from './planetDetail.js'

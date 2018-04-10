@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux-immutable'
 import taskReducer from './tasks'
 import login from './login'
 import planetList from './planetList'

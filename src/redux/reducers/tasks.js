@@ -1,5 +1,6 @@
 import types from '../actions/types'
-let NEXT_ID = 3
+import {Map, fromJS} from 'immutable'
+let NEXT_ID = 3;
 const TASK_DUMMY_DATA = [
     {
         title: 'Reducer Task1',
@@ -15,15 +16,18 @@ const TASK_DUMMY_DATA = [
     }
 ];
 
-export default (state = TASK_DUMMY_DATA, action = {})=> {
+
+export default (state = fromJS(TASK_DUMMY_DATA), action = {})=> {
     switch (action.type) {
         case types.ADD_TASK :
         {
             const {title} = action.payload;
-            return [...state, {id: NEXT_ID++, title}]
+            let newRecord = Map({id: NEXT_ID++, title});
+            return state.push(newRecord);
         }
-            default : {
-                return state;
-            }
+        default :
+        {
+            return state;
+        }
     }
 }

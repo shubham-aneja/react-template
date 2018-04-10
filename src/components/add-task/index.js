@@ -19,6 +19,7 @@ export default class AddTask extends Component {
         this.state = {
             newTaskTitle: ''
         };
+
     }
 
     onSubmit = _=> {

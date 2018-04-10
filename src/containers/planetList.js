@@ -1,13 +1,15 @@
 import {connect} from 'react-redux'
 import {PlanetList} from '../components/'
 import {planetListSelectItem, planetListSetError, planetListSetLoading, planetListDestroy , planetListSetPlanets, planetListFetchPlanets} from '../redux/actions'
+import toJS  from '../hoc/toJS'
 
 const mapStateToProps = (state, ownProps)=> {
-    const planetListState = state.planetList || {};
-    const {loading, error, planets} = planetListState;
+    const planetListState = state.get('planetList');
+    console.log('111 555 planet list state', planetListState);
+    let planets = planetListState.get('planets');
     return {
-        loading,
-        error,
+        loading: planetListState.get('loading'),
+        error: planetListState.get('error'),
         planets
     }
 };
@@ -21,6 +23,6 @@ const mapDispatchToProps = {
     planetListSelectItem
 };
 
-const ConnectedPlanetList = connect(mapStateToProps, mapDispatchToProps)(PlanetList);
+const ConnectedPlanetList = connect(mapStateToProps, mapDispatchToProps)(toJS(PlanetList));
 
 export default ConnectedPlanetList

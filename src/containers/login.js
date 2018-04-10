@@ -3,13 +3,13 @@ import {Login} from '../components/'
 import {loginUserNameChange, loginPasswordChange, loginDoLogin, loginDestroy} from '../redux/actions/'
 
 const mapStateToProps = (appState) => {
-    const loginState = appState.login || {};
+    const loginState = appState.get('login');
 
     return {
-        username: loginState.username,
-        password: loginState.password,
-        error: loginState.error,
-        isLoading: loginState.loading
+        username: loginState.get('username'),
+        password: loginState.get('password'),
+        error: loginState.get('error'),
+        isLoading: loginState.get('loading')
     }
 };
 
