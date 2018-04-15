@@ -7,7 +7,6 @@ import { watchFetchPlanetDetail} from './planetDetail'
 import {watchLogin, watchLogout} from './login.js'
 
 export default function* app() {
-    console.log('app generator saga called...');
     yield all([
         watchFetchPlanets(),
         watchFetchPlanetDetail(),

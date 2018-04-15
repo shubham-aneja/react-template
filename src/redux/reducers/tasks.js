@@ -1,5 +1,7 @@
 import types from '../actions/types'
 import {Map, fromJS} from 'immutable'
+import {createReducer} from '../../utils/helpers'
+
 let NEXT_ID = 3;
 const TASK_DUMMY_DATA = [
     {
@@ -17,17 +19,12 @@ const TASK_DUMMY_DATA = [
 ];
 
 
-export default (state = fromJS(TASK_DUMMY_DATA), action = {})=> {
-    switch (action.type) {
-        case types.ADD_TASK :
-        {
+export default {
+    tasks: createReducer(fromJS(TASK_DUMMY_DATA), {
+        [types.ADD_TASK ](state, action){
             const {title} = action.payload;
             let newRecord = Map({id: NEXT_ID++, title});
             return state.push(newRecord);
         }
-        default :
-        {
-            return state;
-        }
-    }
+    })
 }

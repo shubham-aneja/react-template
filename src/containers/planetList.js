@@ -5,7 +5,6 @@ import toJS  from '../hoc/toJS'
 
 const mapStateToProps = (state, ownProps)=> {
     const planetListState = state.get('planetList');
-    console.log('111 555 planet list state', planetListState);
     let planets = planetListState.get('planets');
     return {
         loading: planetListState.get('loading'),

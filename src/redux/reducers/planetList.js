@@ -1,6 +1,7 @@
 import types from '../actions/types'
 import {Map, fromJS} from 'immutable'
 import {setItemInState} from './utils'
+import {createReducer} from '../../utils/helpers'
 
 const DEFAULT_STATE = fromJS({
     loading: false,
@@ -8,30 +9,20 @@ const DEFAULT_STATE = fromJS({
     planets: []
 });
 
-export default (state = DEFAULT_STATE, action = {})=> {
-    switch (action.type) {
 
-        case types.PLANET_LIST_SET_LOADING:
-        {
-            return setItemInState('loading', state, action);
-        }
-        case types.PLANET_LIST_SET_ERROR:
-        {
-            return setItemInState('error', state, action);
+export default {planetList: createReducer(DEFAULT_STATE, {
+    [types.PLANET_LIST_SET_LOADING](state, action){
+        return setItemInState('loading', state, action);
 
-        }
-        case types.PLANET_LIST_SET_PLANETS:
-        {
-            return setItemInState('planets', state, action, fromJS(action.planets));
+    },
+    [types.PLANET_LIST_SET_ERROR](state, action){
+        return setItemInState('error', state, action);
 
-        }
-        case types.PLANET_LIST_DESTROY:
-        {
-            return Map()
-        }
-        default :
-        {
-            return state;
-        }
+    },
+    [types.PLANET_LIST_SET_PLANETS](state, action){
+        return setItemInState('planets', state, action, fromJS(action.planets));
+    },
+    [types.PLANET_LIST_DESTROY](state, action){
+        return Map()
     }
-}
+})}

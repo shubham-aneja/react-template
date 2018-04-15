@@ -5,7 +5,6 @@ const PLANET_GET_URL = `https://swapi.co/api/planets`;
 
 
 function* fetchPlanets(action) {
-    console.log('9999 999 planet list gen...')
 
     try {
         let x = put(planetListSetLoading(true))
