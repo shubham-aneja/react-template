@@ -1,5 +1,5 @@
 import types from '../actions/types'
-import {List, Map, fromJS} from 'immutable'
+import {Map, fromJS} from 'immutable'
 import {setItemInState} from './utils'
 
 const DEFAULT_STATE = fromJS({

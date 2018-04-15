@@ -1,8 +1,4 @@
 import Types from './types.js'
-import {api} from '../../utils/api'
-import {pushPath} from './'
-
-const LOGIN_URL = `https://swapi.co/api/people/?search`;
 
 export const loginUserNameChange = (username)=> (
 {
@@ -38,56 +34,57 @@ export const loginDestroy = ()=>({
 });
 
 
-export const loginDoLogout = (payload)=> {
-    localStorage.removeItem('userInfo');
-    return (dispatch)=> {
-        dispatch(pushPath('/login'));
-    }
-}
+export const loginDoLogout = (payload)=> ({
+    type: Types.LOGIN_DO_LOGOUT
+});
 
 export const loginDoLogin = ({username, password})=> {
-
-    return (dispatch)=> {
-
-        if (!username || !password) {
-            dispatch(loginSetError("Username and password are mandatory for login"));
-
-        } else {
-            dispatch(loginSetError(""));
-            dispatch(loginSetLoading(true));
-            api(`${LOGIN_URL}=${username}`).then(response=> {
-                dispatch(loginSetLoading(false));
-                if (response && response.count === 0) {
-                    dispatch(loginSetError('Invalid username or password'));
-                } else {
-                    const { results } = response;
-                    let user;
-                    for (let i = 0; i < results.length; i++) {
-                        const userInfo = results[i];
-
-                        if (userInfo.name === username && userInfo.birth_year === password) {
-                            user = userInfo;
-                            break;
-                        }
-                    }
-                    if (user) {
-                        localStorage.setItem('userInfo', username);
-                        dispatch(pushPath('/'));
-                        dispatch(loginPasswordChange(''));
-                        dispatch(loginUserNameChange(''));
-                        dispatch(loginSetError(''));
-
-                    } else {
-                        dispatch(loginSetError('Invalid username or password'));
-                    }
-                }
-            }).catch(e=> {
-                    dispatch(loginSetLoading(false));
-                    dispatch(loginSetError("Something went wrong"));
-                }
-            )
-        }
-    }
+    return {
+        type: Types.LOGIN_DO_LOGIN,
+        username,
+        password
+    };
+    //return (dispatch)=> {
+    //
+    //    if (!username || !password) {
+    //        dispatch(loginSetError("Username and password are mandatory for login"));
+    //
+    //    } else {
+    //        dispatch(loginSetError(""));
+    //        dispatch(loginSetLoading(true));
+    //        api(`${LOGIN_URL}=${username}`).then(response=> {
+    //            dispatch(loginSetLoading(false));
+    //            if (response && response.count === 0) {
+    //                dispatch(loginSetError('Invalid username or password'));
+    //            } else {
+    //                const { results } = response;
+    //                let user;
+    //                for (let i = 0; i < results.length; i++) {
+    //                    const userInfo = results[i];
+    //
+    //                    if (userInfo.name === username && userInfo.birth_year === password) {
+    //                        user = userInfo;
+    //                        break;
+    //                    }
+    //                }
+    //                if (user) {
+    //                    localStorage.setItem('userInfo', username);
+    //                    dispatch(pushPath('/'));
+    //                    dispatch(loginPasswordChange(''));
+    //                    dispatch(loginUserNameChange(''));
+    //                    dispatch(loginSetError(''));
+    //
+    //                } else {
+    //                    dispatch(loginSetError('Invalid username or password'));
+    //                }
+    //            }
+    //        }).catch(e=> {
+    //                dispatch(loginSetLoading(false));
+    //                dispatch(loginSetError("Something went wrong"));
+    //            }
+    //        )
+    //    }
+    //}
 
 };
 

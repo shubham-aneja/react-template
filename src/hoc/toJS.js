@@ -1,5 +1,5 @@
 import React from 'react'
-import {isImmutable, Iterable} from 'immutable'
+import {Iterable} from 'immutable'
 
 const toJS = (Component)=>(props)=> {
     let jsProps = Object.entries(props).reduce(

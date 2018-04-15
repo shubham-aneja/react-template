@@ -1,8 +1,6 @@
 import Types from './types.js'
-import {api} from '../../utils/api'
 import {pushPath} from './'
 
-const PLANET_GET_URL = `https://swapi.co/api/planets`;
 
 
 export const planetListSetError = (error)=> (
@@ -44,7 +42,11 @@ export const planetListSelectItem = (selectedPlanet)=> (dispatch)=> {
 
 export const planetListFetchPlanets = ()=> {
 
-    return (dispatch)=> {
+    return {
+        type: Types.PLANET_LIST_FETCH_PLANETS
+    };
+    /*Important: This code has been moved to the respective saga*/
+/*    return (dispatch)=> {
         dispatch(planetListSetError(""));
         dispatch(planetListSetLoading(true));
         api(PLANET_GET_URL).then(response=> {
@@ -56,5 +58,5 @@ export const planetListFetchPlanets = ()=> {
                 dispatch(planetListSetError("Something went wrong"));
             }
         )
-    }
+    }*/
 };

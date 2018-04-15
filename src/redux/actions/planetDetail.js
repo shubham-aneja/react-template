@@ -1,8 +1,4 @@
 import Types from './types.js'
-import {api} from '../../utils/api'
-
-const PLANET_GET_URL = `https://swapi.co/api/planets/`;
-
 
 export const planetDetailSetError = (error)=> (
 {
@@ -30,18 +26,10 @@ export const planetDetailDestroy = (loading)=> (
 }
 );
 
-export const planetDetailGetInfo = (id)=> {
+export const planetDetailGetInfo = (planetId)=> {
+return {
+    type: Types.PLANET_DETAIL_FETCH_PLANET_DETAILS,
+    planetId
 
-    return (dispatch)=> {
-        dispatch(planetDetailSetError(""));
-        dispatch(planetDetailSetLoading(true));
-        api(PLANET_GET_URL+id).then(response=> {
-            dispatch(planetDetailSetLoading(false));
-            dispatch(planetDetailSetDetails(response));
-        }).catch(e=> {
-                dispatch(planetDetailSetLoading(false));
-                dispatch(planetDetailSetError("Something went wrong"));
-            }
-        )
-    }
+};
 };
