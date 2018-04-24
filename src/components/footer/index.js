@@ -7,10 +7,10 @@ const Footer = ()=> {
     return (
         <div className="footer">
             <div className="footer__item">
-                <Link activeClassName="selectedFooterLink" className="footerLink" to="/terms">Terms</Link>
+                <Link activeClassName="selectedFooterLink" className="footerLink" to="/home/terms">Terms</Link>
             </div>
             <div className="footer__item">
-                <Link activeClassName="selectedFooterLink" className="footerLink" to="contact-us">Contact us</Link>
+                <Link activeClassName="selectedFooterLink" className="footerLink" to="/home/contact-us">Contact us</Link>
             </div>
         </div>
     );

@@ -10,12 +10,19 @@ import {Login, Home} from '../containers'
 
 export default [
     {
-        path: '/', component: Home, onEnter, childRoutes: [
+        path: '/home', component: Home, onEnter, childRoutes: [
         {path: 'contact-us'},
         {path: 'tasks'},
         {path: 'planets'},
         {path: 'planet/:id'},
-        {path: 'terms'}
+        {path: 'products'},
+        {path: 'terms'},
+        {path: 'dashboard',
+                childRoutes: [
+                    {path: 'products'}
+                ]
+        },
+        //{path: 'dashboard/products'}
     ]
     },
     {path: 'contactus', component: ContactUs, onEnter},

@@ -1,0 +1,22 @@
+.dashboard__body {
+  display: flex;
+  height: 100%;
+
+  .aside-content {
+    width: 30%;
+    max-width: 500px;
+    min-width: 400px;
+
+    .side-menu-container{
+      height: 100%;
+      width: 100%;
+    }
+
+  }
+
+  .main-content {
+    flex: 1;
+    background-color: orange;
+  }
+
+}

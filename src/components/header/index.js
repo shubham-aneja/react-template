@@ -6,20 +6,14 @@ const Header = (props)=> {
 
     return (
         <div className="header-container">
-
             <div className="header__logo-container">
-                <Link to="/">
-
+                <Link to="/home/dashboard/products">
                     <img src="/logo.png" alt="logo__img" className=""/>
                 </Link>
-
             </div>
-
             <div className="header__title-container">
                 Welcome to Pizza Bar
             </div>
-
-
             <div className="header__actions-container">
                 <div onClick={props.onLogout} className="header__action-container__action">
                     Logout

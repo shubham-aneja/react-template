@@ -1,6 +1,6 @@
 import {connect} from 'react-redux'
 import {PlanetList} from '../components/'
-import {planetListSelectItem, planetListSetError, planetListSetLoading, planetListDestroy , planetListSetPlanets, planetListFetchPlanets} from '../redux/actions'
+import {planetListSelectItem, planetListDestroy , planetListFetchPlanets} from '../redux/actions'
 import toJS  from '../hoc/toJS'
 
 const mapStateToProps = (state, ownProps)=> {
@@ -14,10 +14,7 @@ const mapStateToProps = (state, ownProps)=> {
 };
 
 const mapDispatchToProps = {
-    planetListSetError,
-    planetListSetLoading,
     planetListDestroy,
-    planetListSetPlanets,
     planetListGetPlanets: planetListFetchPlanets,
     planetListSelectItem
 };

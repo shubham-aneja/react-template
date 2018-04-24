@@ -9,10 +9,10 @@ export default class NavBar extends PureComponent {
             <div className="navigations">
 
                 <div  className="navigations__item">
-                    <Link activeClassName="selectedNavLink" className="navLink"  to="/tasks">Tasks</Link>
+                    <Link activeClassName="selectedNavLink" className="navLink"  to="/home/tasks">Tasks</Link>
                 </div>
                 <div  className="navigations__item">
-                    <Link activeClassName="selectedNavLink" className="navLink"  to="/planets">Planets</Link>
+                    <Link activeClassName="selectedNavLink" className="navLink"  to="/home/planets">Planets</Link>
                 </div>
             </div>
         );
