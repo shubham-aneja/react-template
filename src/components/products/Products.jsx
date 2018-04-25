@@ -5,7 +5,7 @@ import './products.scss';
 export default class Products extends PureComponent {
 
   static defaultProps = {
-    categories: [],
+    products: [],
     error: '',
     loading: false,
     history: {

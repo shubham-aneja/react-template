@@ -18,7 +18,15 @@ const mapDispatchToProps = {
     planetListGetPlanets: planetListFetchPlanets,
     planetListSelectItem
 };
-
-const ConnectedPlanetList = connect(mapStateToProps, mapDispatchToProps)(toJS(PlanetList));
+const mergeConnectedProps = (stateProps, dispatchedProps, ownProps)=>{
+    console.log('000 111 222', stateProps, dispatchedProps, ownProps);
+    return {
+        ...stateProps, ...dispatchedProps, ...ownProps,
+        planetListSelectItem: (planetInfo) =>{
+            dispatchedProps.planetListSelectItem(planetInfo, ownProps.history.push)
+        }
+    }
+}
+const ConnectedPlanetList = connect(mapStateToProps, mapDispatchToProps, mergeConnectedProps)(toJS(PlanetList));
 
 export default ConnectedPlanetList

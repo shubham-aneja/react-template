@@ -1,36 +1,11 @@
-import { NotFound, ContactUs} from '../components'
-import {Login, Home} from '../containers'
-
-
 /* use childROutes: https://scotch.io/courses/using-react-router-4/child-routes
 
  /users par users ka list dikhe
  /users/1 par list to dikhe hi sath me first user ka detail b dikhe
  */
 
-export default [
-    {
-        path: '/home', component: Home, onEnter, childRoutes: [
-        {path: 'contact-us'},
-        {path: 'tasks'},
-        {path: 'planets'},
-        {path: 'planet/:id'},
-        {path: 'products'},
-        {path: 'terms'},
-        {path: 'dashboard',
-                childRoutes: [
-                    {path: 'products'}
-                ]
-        },
-        //{path: 'dashboard/products'}
-    ]
-    },
-    {path: 'contactus', component: ContactUs, onEnter},
-    {path: 'login', component: Login, onEnter},
-    {path: '**', component: NotFound}
-]
-
-function onEnter(nextState, transition, callback) {
+export function onEnter(nextState, transition, callback) {
+    alert('on enter called')
     const { pathname } = nextState.location;
     const isLoggedIn = localStorage.getItem('userInfo');
     if (isLoggedIn) {

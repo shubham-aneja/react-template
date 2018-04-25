@@ -1,7 +1,4 @@
 import Types from './types.js'
-import {pushPath} from './'
-
-
 
 export const planetListSetError = (error)=> (
 {
@@ -30,13 +27,13 @@ export const planetListSetPlanets = (planets)=> (
 }
 );
 
-export const planetListSelectItem = (selectedPlanet)=> (dispatch)=> {
+export const planetListSelectItem = (selectedPlanet, push)=> (dispatch)=> {
     const idRegex = /[0-9]+/;
     let id = selectedPlanet.url.match(idRegex);
     if (!selectedPlanet || !selectedPlanet.url || id === undefined || id === null) {
         dispatch(planetListSetError("No detail available for planet to get more info"))
     } else {
-        dispatch(pushPath(`planet/` + id));
+        push(`planet/` + id);
     }
 };
 

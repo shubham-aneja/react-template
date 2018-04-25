@@ -5,11 +5,11 @@ import planetList from './planetList'
 import categories from './categoryList.js'
 import productList from './productList.js'
 import planetDetail from './planetDetail'
-import { routerReducer } from 'react-router-redux'
+//import { routerReducer } from 'react-router-redux'
 
 const rootReducer = combineReducers({
   ...tasks,
-  routing: routerReducer,
+  //routing: routerReducer,
   ...login,
   ...planetList,
   ...planetDetail,

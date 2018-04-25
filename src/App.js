@@ -1,34 +1,34 @@
 import React, {  PureComponent } from 'react';
 import './App.scss';
 import {Provider} from 'react-redux';
-import { Router, browserHistory} from 'react-router'
-import {  syncHistoryWithStore } from 'react-router-redux'
 import store from './redux'
-import Routes from './configurations/routes.js'
+import {onEnter} from './configurations/routes.js'
+import { BrowserRouter, Route , Switch, Redirect} from 'react-router-dom'
 
 
-const history = syncHistoryWithStore(
-    browserHistory,
-    store,
-    {
-        selectLocationState(state) {
-            return state.get('routing')
-        }
-    }
-);
-
+import { NotFound, ContactUs} from './components'
+import {Login, Home} from './containers'
 
 class App extends PureComponent {
-    render() {
+  render() {
+    return (
+      <Provider store={store}>
+        <div className="app__container">
+          <BrowserRouter>
+            <Switch>
+              <Route path="/contactus" component={ContactUs} onEnter={onEnter}></Route>
+              <Route path="/login" component={Login} onEnter={onEnter}></Route>
+              <Route path="/home" component={Home} onEnter={onEnter}></Route>
+              <Redirect path='/' to='/home'></Redirect>
+              <Route component={NotFound}></Route>
+            </Switch>
 
-        return (
-            <Provider store={store}>
-                <div className="app__container">
-                    <Router routes={Routes} history={history}>
-                    </Router>
-                </div>
-            </Provider>
-        )
-    }
+          </BrowserRouter>
+        </div>
+      </Provider>
+    )
+  }
 }
+
 export default App;
+

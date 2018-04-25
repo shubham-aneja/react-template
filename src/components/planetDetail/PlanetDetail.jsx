@@ -33,8 +33,8 @@ export default class PlanetDetail extends PureComponent {
 
 
     componentDidMount() {
-        const {planetDetailGetInfo, routeParams} = this.props
-        const PlanetId = routeParams.id;
+        const {planetDetailGetInfo, match:{params}} = this.props;
+        const PlanetId = params.id;
         planetDetailGetInfo(PlanetId);
     }
 
@@ -52,8 +52,6 @@ export default class PlanetDetail extends PureComponent {
             </div>
         );
         const loadingRenderer = (<div><h2>Loading...</h2></div> )
-
-
         const planetInfoRendered = (
             <div>
                 <h2>{planetInfo.name}</h2>
@@ -95,7 +93,7 @@ export default class PlanetDetail extends PureComponent {
                     </li>
                 </ul>
             </div>
-        )
+        );
         return (<div>
             {errorRenderer}
             {loading ? loadingRenderer : planetInfoRendered}

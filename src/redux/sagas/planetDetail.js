@@ -8,7 +8,7 @@ const PLANET_GET_URL = `https://swapi.co/api/planets`;
 function* fetchPlanetDetails(action) {
     try {
         yield put(planetDetailSetError(''));
-        yield put(planetDetailSetLoading(false));
+        yield put(planetDetailSetLoading(true));
         const response = yield api(`${PLANET_GET_URL}/${action.planetId}`);
         yield put(planetDetailSetLoading(false));
         yield put(planetDetailSetDetails(response));

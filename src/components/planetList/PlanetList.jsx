@@ -47,7 +47,7 @@ export default class PlanetsList extends PureComponent {
                 <div>population: {planet.population}</div>
             </div>
         )
-    }
+    };
 
 
     componentWillUnmount() {

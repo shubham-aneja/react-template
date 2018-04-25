@@ -1,5 +1,5 @@
 import React, { PureComponent} from 'react';
-import { Link } from 'react-router'
+import { NavLink } from 'react-router-dom'
 import './NavBar.scss';
 
 export default class NavBar extends PureComponent {
@@ -9,10 +9,10 @@ export default class NavBar extends PureComponent {
             <div className="navigations">
 
                 <div  className="navigations__item">
-                    <Link activeClassName="selectedNavLink" className="navLink"  to="/home/tasks">Tasks</Link>
+                    <NavLink activeClassName="selectedNavLink" className="navLink"  to="/home/tasks">Tasks</NavLink>
                 </div>
                 <div  className="navigations__item">
-                    <Link activeClassName="selectedNavLink" className="navLink"  to="/home/planets">Planets</Link>
+                    <NavLink activeClassName="selectedNavLink" className="navLink"  to="/home/planets">Planets</NavLink>
                 </div>
             </div>
         );

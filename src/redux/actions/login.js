@@ -34,15 +34,17 @@ export const loginDestroy = ()=>({
 });
 
 
-export const loginDoLogout = (payload)=> ({
-    type: Types.LOGIN_DO_LOGOUT
+export const loginDoLogout = (pushFunction)=> ({
+    type: Types.LOGIN_DO_LOGOUT,
+    pushFunction
 });
 
-export const loginDoLogin = ({username, password})=> {
+export const loginDoLogin = ({username, password, pushFunction})=> {
     return {
         type: Types.LOGIN_DO_LOGIN,
         username,
-        password
+        password,
+        pushFunction
     };
     //return (dispatch)=> {
     //

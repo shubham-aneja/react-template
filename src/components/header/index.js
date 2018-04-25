@@ -1,15 +1,15 @@
 import React from 'react';
 import './header.scss'
 import PropTypes from 'prop-types'
-import {Link} from 'react-router'
+import { NavLink } from 'react-router-dom'
 const Header = (props)=> {
 
     return (
         <div className="header-container">
             <div className="header__logo-container">
-                <Link to="/home/dashboard/products">
+                <NavLink to="/home/dashboard/products">
                     <img src="/logo.png" alt="logo__img" className=""/>
-                </Link>
+                </NavLink>
             </div>
             <div className="header__title-container">
                 Welcome to Pizza Bar

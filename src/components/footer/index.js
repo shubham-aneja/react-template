@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router'
+import { NavLink } from 'react-router-dom'
 import './footer.scss';
 
 const Footer = ()=> {
@@ -7,10 +7,10 @@ const Footer = ()=> {
     return (
         <div className="footer">
             <div className="footer__item">
-                <Link activeClassName="selectedFooterLink" className="footerLink" to="/home/terms">Terms</Link>
+                <NavLink activeClassName="selectedFooterLink" className="footerLink" to="/home/terms">Terms</NavLink>
             </div>
             <div className="footer__item">
-                <Link activeClassName="selectedFooterLink" className="footerLink" to="/home/contact-us">Contact us</Link>
+                <NavLink activeClassName="selectedFooterLink" className="footerLink" to="/home/contact-us">Contact us</NavLink>
             </div>
         </div>
     );

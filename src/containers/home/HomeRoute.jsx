@@ -1,9 +1,9 @@
 import React, { PureComponent, Fragment} from 'react';
 import './Home.scss';
-import { Router, Route} from 'react-router'
 import {TaskList} from '../'
-import {AddTask, PlanetList, PlanetDetail, Dashboard, Products} from '../../containers'
+import {AddTask, PlanetList, PlanetDetail, Dashboard} from '../../containers'
 import {Terms, ContactUs} from '../../components'
+import { Route, Switch , Redirect} from 'react-router-dom'
 
 
 const TaskDashboard = ()=> (<div className='center-aligned'><TaskList></TaskList>
@@ -13,27 +13,20 @@ const TaskDashboard = ()=> (<div className='center-aligned'><TaskList></TaskList
 
 export default class HomeRoute extends PureComponent {
   render() {
-    const {history } = this.props;
+    const {match: {url} } = this.props;
     return (
-      <Fragment>
-        <Router key='router' history={history}>
-          <Route path="home">
-            <Route path="terms" component={Terms}></Route>
-            <Route path="contact-us" component={ContactUs}></Route>
-            <Route path="dashboard" component={Dashboard}>
-              <Route path="/" component={Dashboard}/>
-              <Route path="products" component={Products}/>
-            </Route>
-            <Route path="tasks" component={TaskDashboard}></Route>
-            <Route path="planets" component={PlanetList}></Route>
-            <Route path="planet/:id" component={PlanetDetail}></Route>
-          </Route>
-
-        </Router>
-
-        <div>
-        </div>
-      </Fragment>
+    <Fragment>
+      <Switch>
+        <Route path={`${url}/terms`} component={Terms}></Route>
+        <Route path={`${url}/contact-us`} component={ContactUs}></Route>
+        <Route path={`${url}/dashboard`} component={Dashboard}></Route>
+        <Route path={`${url}/planets`} component={PlanetList}></Route>
+        <Route path={`${url}/planet/:id`} component={PlanetDetail}></Route>
+        <Route path={`${url}/tasks`} component={TaskDashboard}></Route>
+        <Redirect to={`${url}/tasks`}></Redirect>
+      </Switch>
+      <div></div>
+    </Fragment>
     )
   }
 }
