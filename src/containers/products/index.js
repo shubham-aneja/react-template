@@ -3,7 +3,7 @@ import {Products} from '../../components'
 import {productListFetchProducts, productListDestroy} from '../../redux/actions'
 import toJS  from '../../hoc/toJS'
 
-const mapStateToProps = (appState)=> {
+const mapStateToProps = (appState, ownProps)=> {
   const catState = appState.get('products');
   return {
     products: catState.get('products'),

@@ -6,10 +6,10 @@ export default class Categories extends PureComponent {
     categories: [],
     error: '',
     loading: false,
-    history: {
-      push: ()=> {
-      }
-    },
+    //history: {
+    //  push: ()=> {
+    //  }
+    //},
     categoryListFetchCategories: ()=> {
     },
     categoryListDestroy: ()=> {
@@ -39,9 +39,10 @@ export default class Categories extends PureComponent {
   }
 
   onItemPress = (e, category)=> {
+    console.log('on item press called on categories....')
     const {history}= this.props;
     if (!category.subCategories || this.state.showSubcategoriesForIds.includes(category.id)) {
-      history.push('/home/dashboard/products?id=' + category.id)
+      history.push('/home/dashboard/products?categoryId=' + category.id)
     } else {
       this.setState((state)=> {
         const updatedArray = [ ...state.showSubcategoriesForIds, category.id ]

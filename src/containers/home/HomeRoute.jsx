@@ -23,7 +23,7 @@ export default class HomeRoute extends PureComponent {
         <Route path={`${url}/planets`} component={PlanetList}></Route>
         <Route path={`${url}/planet/:id`} component={PlanetDetail}></Route>
         <Route path={`${url}/tasks`} component={TaskDashboard}></Route>
-        <Redirect to={`${url}/tasks`}></Redirect>
+        <Redirect to={`${url}/dashboard`}></Redirect>
       </Switch>
       <div></div>
     </Fragment>

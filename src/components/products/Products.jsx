@@ -1,6 +1,7 @@
 import React, { PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import './products.scss';
+import queryString from'query-string';
 
 export default class Products extends PureComponent {
 
@@ -35,22 +36,41 @@ export default class Products extends PureComponent {
   }
 
   componentDidMount() {
+    this.fetchProducts()
+  }
+
+  getCategoryId(props = this.props) {
+    const {location} = props || {};
+    const parsedQuery = queryString.parse(location.search);
+    return parsedQuery.categoryId;
+  }
+
+  fetchProducts(categoryId = this.getCategoryId()) {
     const {productListFetchProducts} = this.props;
-    productListFetchProducts();
+    productListFetchProducts(categoryId);
+  }
+
+  componentWillReceiveProps(newProps, newState) {
+    const prevCategory = this.getCategoryId();
+    const currentCategory = this.getCategoryId(newProps);
+
+    if (prevCategory !== currentCategory) {
+      console.log('categories changed... updating products...');
+      this.fetchProducts(currentCategory);
+    }
   }
 
   render() {
-    const {error, loading, location, products} = this.props || {};
-    const {query} = location || {};
+    const {error, loading, products} = this.props || {};
+    const categoryId = this.getCategoryId();
     return (<div>
         {loading && <h2>Loading...</h2>}
+        <h2>Displaying the products for category id {categoryId}</h2>
         {products.map(product=> {
           return (<div key={product.id}>
             <h2>{product.name}</h2>
           </div>)
         })}
-        {JSON.stringify()}
-        {JSON.stringify(query)}
         {error && <div className='error-container'>
           <h3>{error}</h3>
         </div>}

@@ -11,6 +11,8 @@ const DEFAULT_STATE = fromJS({
 
 export default {products: createReducer(DEFAULT_STATE, {
     [types.PRODUCT_LIST_SET_LOADING](state, action){
+        console.log('111 999 setting loading...', action.loading)
+
         return setItemInState('loading', state, action);
         
     },
@@ -19,6 +21,7 @@ export default {products: createReducer(DEFAULT_STATE, {
         
     },
     [types.PRODUCT_LIST_SET_PRODUCTS](state, action){
+        console.log('111 999 setting products...', action.products)
         return setItemInState('products', state, action, fromJS(action.products));
     },
     [types.PRODUCT_LIST_DESTROY](state, action){

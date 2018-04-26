@@ -1,8 +1,7 @@
 import { put, call, takeLatest } from 'redux-saga/effects'
 import { api } from '../../utils/api'
 import { types, loginUserNameChange, loginPasswordChange, loginSetLoading, loginSetError} from '../actions'
-const LOGIN_URL = `https://swapi.co/api/people/?search`;
-
+import {URLS} from '../../configurations/config.js'
 
 export function* watchLogin() {
   yield takeLatest(types.LOGIN_DO_LOGIN, workerDoLogin)
@@ -16,7 +15,7 @@ function* workerDoLogin({pushFunction, username, password}) {
     } else {
       yield  put(loginSetError(""));
       yield put(loginSetLoading(true));
-      let response = yield call(api, `${LOGIN_URL}=${username}`);
+      let response = yield call(api, `${URLS.LOGIN}=${username}`);
       yield put(loginSetLoading(false));
       if (response && response.count === 0) {
         yield put(loginSetError('Invalid username or password'));

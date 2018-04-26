@@ -29,9 +29,10 @@ export const productListSetProducts = (products)=> (
 }
 );
 
-export const productListFetchProducts= ()=> {
+export const productListFetchProducts= (categoryId)=> {
 
     return {
-        type: Types.PRODUCT_LIST_FETCH_PRODUCTS
+        type: Types.PRODUCT_LIST_FETCH_PRODUCTS,
+        categoryId
     };
 };

@@ -1,42 +1,29 @@
 import { put, takeLatest } from 'redux-saga/effects'
 import { types, productListSetLoading, productListSetProducts, productListSetError } from '../actions'
+import {mockedProducts} from './mockedDB'
+import {URLS} from '../../configurations/config.js'
+import { api } from '../../utils/api'
+
+const PLANET_GET_URL = URLS.PLANET_LIST;
+//const CATEGORY_LIST_URL = URLS.CATEGORY_LIST;
 
 function* fetchProducts(action) {
 
   try {
-    let x = put(productListSetLoading(true));
-    yield x;
-    //const response = yield api(PRODUCT_LIST_GET_URL);
+
+    /*todo: just replace the url with category url, and response */
+    yield put(productListSetLoading(true));
+    /*const response = */yield api(PLANET_GET_URL);
     //const results = response.results;
-    const products = [
-      {
-        name: 'Apple Iphone9',
-        cost: 5000,
-        id: 1,
-        categories: [
-          { name: 'phone', id: 1221 },
-          { name: 'electronics', id: 567 }
-        ]
-      },
-      {
-        name: 'Apple Iphone7',
-        cost: 5000,
-        id: 2,
-        categories: [
-          { name: 'phone', id: 1221 },
-          { name: 'electronics', id: 567 }
-        ]
-      }
 
-    ];
-
-    //yield delay(1000);
     yield put(productListSetLoading(false));
-    yield put(productListSetProducts(products))
+    console.log('888 category id in product list saga', action)
+    yield put(productListSetProducts(mockedProducts(action.categoryId)))
   }
   catch (err) {
+    console.log('111 999 error', err);
     yield put(productListSetLoading(false));
-    yield productListSetError("Something went wrong");
+    yield put(productListSetError(`Something went wrong: ${err.message}`));
   }
 }
 

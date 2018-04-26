@@ -6,7 +6,7 @@ import {Categories} from '../../containers'
 export default  class Dashboard extends PureComponent {
 
   render() {
-    const {router: history} = this.props;
+    const {history, match: {url} } = this.props;
     return (
       <div className="dashboard__body">
         <div className="aside-content">
@@ -19,7 +19,7 @@ export default  class Dashboard extends PureComponent {
         </div>
 
         <div className="main-content">
-          <DashboardRoute></DashboardRoute>
+          <DashboardRoute url={url}></DashboardRoute>
         </div>
       </div>
     );
